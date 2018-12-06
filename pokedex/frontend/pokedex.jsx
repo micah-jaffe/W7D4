@@ -11,14 +11,3 @@ document.addEventListener('DOMContentLoaded', () => {
     rootEl
   );
 });
-
-
-// TESTING
-import { receiveAllPokemon, requestAllPokemon } from './actions/pokemon_actions';
-import * as APIUtil from './util/api_util';
-import { selectAllPokemon } from './reducers/selectors';
-window.getState = store.getState;
-window.dispatch = store.dispatch;
-window.receiveAllPokemon = receiveAllPokemon;
-window.requestAllPokemon = requestAllPokemon;
-window.selectAllPokemon = selectAllPokemon;
