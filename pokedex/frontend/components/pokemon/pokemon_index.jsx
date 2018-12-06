@@ -1,16 +1,18 @@
 import React from 'react';
+import PokemonIndexItem from './pokemon_index_item';
 
 export default class PokemonIndex extends React.Component {
   render() {
+    const pokemonItems = this.props.pokemon.map(p => (
+      <PokemonIndexItem key={p.id} pokemon={p} />
+    ));
+
     return (
-      <ul>
-        {this.props.pokemon.map((p) => (
-          <li key={p.id}>
-            <img src={p.image_url}/>
-            {p.name}
-          </li>
-        ))}
-      </ul>
+      <section className="pokedex">
+        <ul>
+          {pokemonItems}
+        </ul>
+      </section>
     );
   }
 
