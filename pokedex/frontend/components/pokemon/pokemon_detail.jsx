@@ -15,4 +15,10 @@ export default class PokemonDetail extends React.Component {
   componentDidMount() {
     this.props.requestSinglePokemon(this.props.match.params.pokemonId);
   }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.match.params.pokemonId !== prevProps.match.params.pokemonId) {
+      this.props.requestSinglePokemon(this.props.match.params.pokemonId);
+    }
+  }
 }

@@ -187,6 +187,13 @@ function (_React$Component) {
     value: function componentDidMount() {
       this.props.requestSinglePokemon(this.props.match.params.pokemonId);
     }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      if (this.props.match.params.pokemonId !== prevProps.match.params.pokemonId) {
+        this.props.requestSinglePokemon(this.props.match.params.pokemonId);
+      }
+    }
   }]);
 
   return PokemonDetail;
