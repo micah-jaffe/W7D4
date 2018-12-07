@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const PokemonIndexItem = ({ pokemon }) => {
   return (
-    <Link to='/pokemon/:pokemonId'>
+    <Link to={`/pokemon/${pokemon.id}`}>
       <li>
         <img src={pokemon.image_url}/>
         {pokemon.name}

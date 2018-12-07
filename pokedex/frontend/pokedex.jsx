@@ -8,11 +8,11 @@ import { receivePokemon } from './actions/pokemon_actions';
 document.addEventListener('DOMContentLoaded', () => {
   const rootEl = document.getElementById('root');
   const store = configureStore();
+  window.store = store;
+  window.receivePokemon = receivePokemon;
   ReactDOM.render(
     <Root store={store}/>,
     rootEl
   );
 
-  window.store = store;
-  window.receivePokemon = receivePokemon;
 });

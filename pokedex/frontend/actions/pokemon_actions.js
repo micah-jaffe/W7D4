@@ -12,7 +12,12 @@ export const requestAllPokemon = () => dispatch => (
     .then(pokemon => dispatch(receiveAllPokemon(pokemon)))
 );
 
-export const receivePokemon = pokemon => ({
+export const receiveSinglePokemon = payload => ({
   type: RECEIVE_POKEMON,
-  pokemon
+  payload
 });
+
+export const requestSinglePokemon = id => dispatch => (
+  APIUtil.fetchPokemon(id)
+    .then(pokemon => dispatch(receiveSinglePokemon(pokemon)))
+);
